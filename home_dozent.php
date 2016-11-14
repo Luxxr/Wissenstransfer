@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The asbove 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>p42 - Home</title>
+  <title>Wissenstransfer - Home</title>
 
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->
