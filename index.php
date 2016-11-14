@@ -26,7 +26,7 @@
   					<div class="panel-heading">
   						<div class="row">
   							<div class="col-xs-12">
-    							<h3> Wissenstransfer Jahresberichttt</h3>
+    							<h3> Wissenstransfer Jahresberichtt</h3>
   							</div>
   						</div>
 
