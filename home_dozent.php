@@ -30,27 +30,42 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="css/p42_style.css">
+  <link rel="stylesheet" href="css/home_dozent.css">
 
 </head>
 <body>
-  <div class="span3">
-    <h2>Publikation erfassen</h2>
-    <form>
-    <label>First Name</label>
-    <input type="text" name="firstname" class="span3"></br>
-    <label>Last Name</label>
-    <input type="text" name="lastname" class="span3"></br>
-    <label>Email Address</label>
-    <input type="email" name="email" class="span3"></br>
-    <label>Username</label>
-    <input type="text" name="username" class="span3"></br>
-    <label>Password</label>
-    <input type="password" name="password" class="span3"></br>
-    <input type="submit" value="Sign up" class="btn btn-primary pull-right">
-    <div class="clearfix"></div>
+  <div class="container">
+    <form id="contact" action="" method="post">
+      <h3>Publikation erfassen</h3>
+      <h4>test test test</h4>
+      <fieldset>
+        <select>
+          <option value="Referat">Referat</option>
+          <option value="Artikel">Artikel</option>
+          <option value="Radiobeitrag">Radiobeitrag</option>
+          <option value="Konferenz">Konferenz</option>
+          <option value="Blogbeitrag">Blogbeitrag</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Voller Name" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Erscheinungsdatum" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+      </fieldset>
+
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+
     </form>
-</div>
+  </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

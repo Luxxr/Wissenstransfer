@@ -183,10 +183,10 @@ body {
 .card .title {
   position: relative;
   z-index: 1;
-  border-left: 5px solid ##CC0066;
+  border-left: 5px solid #CC0066;
   margin: 0 0 35px;
   padding: 10px 0 10px 50px;
-  color:##CC0066;
+  color:#CC0066;
   font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
