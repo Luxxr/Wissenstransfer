@@ -1,3 +1,50 @@
+<?php
+  /*session_start();
+  if(isset($_SESSION['id'])) unset($_SESSION['id']);
+  session_destroy(); */
+
+  $error = false;
+  $error_msg = "";
+  $success = false;
+  $success_msg = "";
+
+
+  /*if(isset($_POST['login-submit'])){
+    echo $_POST['email'];
+  }*/
+
+ if(isset($_POST['login-submit'])){
+    if(!empty($_POST['email']) && !empty($_POST['password'])){
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $db = mysqli_connect('localhost', '861288_1_1', 'u7wqnSfU6Hy3', '861288_1_1')
+        or die('Fehler beim Verbinden mit dem Datenbankserver.');
+      mysqli_set_charset($db, "utf8");
+      $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password';";
+
+      $result = mysqli_query($db, $sql);
+      mysqli_close($db);
+
+      $row_count = mysqli_num_rows($result);
+
+
+      if($row_count == 1){
+        $user = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION['id'] = $user['user_id'];
+        header("Location:home_dozent.php");
+      }else {
+        $error = true;
+        $error_msg .= "Leider konnten wir BLA BLA.<br/>";
+      }
+    }else {
+      $error = true;
+      $error_msg .= "Bitte füllen sie bla bla aus. <br/>";
+    }
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,75 +65,41 @@
   </head>
 
   <body>
-    <!-- http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form -->
+<!--http://bootsnipp.com/snippets/featured/login-and-register-tabbed-form-->
     <div class="container">
-    	<div class="row">
-  			<div class="col-md-6 col-md-offset-3">
-  				<div class="panel panel-login">
-  					<div class="panel-heading">
-  						<div class="row">
-  							<div class="col-xs-12">
-    							<h3> Wissenstransfer Jahresbericht</h3>
-  							</div>
-  						</div>
+	<div class="row">
 
-  						<div class="row">
+<!-- Mixins-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1>HTW Wissenstransfer</h1>
+</div>
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Login</h1>
 
-  						</div>
-  						<hr>
-  					</div>
-  					<div class="panel-body">
-  						<div class="row">
-  							<div class="col-lg-12">
-  								<!-- Login-Formular -->
-  								<form id="login-form" action="index.php" method="post" role="form" style="display: block;">
-  									<div class="form-group">
-  										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="E-Mail-Adresse" value="">
-  									</div>
-  									<div class="form-group">
-  										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
-  									</div>
-  									<div class="form-group">
-  										<div class="row">
-  											<div class="col-sm-6 col-sm-offset-3">
-  												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Login">
-  											</div>
-  										</div>
-  									</div>
-  								</form>
-  								<!-- /Login-Formular -->
+    <form id="login-form" action="index.php" method="post" role="form" style="display: block;">
+      <div class="input-container">
+        <input type="email" name="email" id="email" tabindex="1" autocomplete="off" class="form-control" required="required"/>
+        <label for="email">E-Mail</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="password" name="password" tabindex="2" id="Password" autocomplete="off" class="form-control" required="required"/>
+        <label for="password">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container">
+        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Take me to Narnia">
+      </div>
 
-  								<form id="register-form" action="index.php" method="post" role="form" style="display: none;">
-  									<div class="form-group">
-  										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="E-Mail-Adresse" value="">
-  									</div>
-  									<div class="form-group">
-  										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Passwort">
-  									</div>
-  									<div class="form-group">
-  										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Passwort bestätigen">
-  									</div>
-  									<div class="form-group">
-  										<div class="row">
-  											<div class="col-sm-6 col-sm-offset-3">
-  												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="jetzt registrieren">
-  											</div>
-  										</div>
-  									</div>
-  								</form>
+    </form>
 
-  							</div>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  		<!-- Die beiden BS-Allert-Boxen geben Rückmeldung über den Registrierungsprozess. Sie werden erst später benötigt. -->
-      <!--
-      <div class="alert alert-success" role="alert">Es hat funktioniert.</div>
-      <div class="alert alert-danger" role="alert">Es ist ein Fehler aufgetreten.</div>
-      -->
-    </div><!-- /container -->
+
+  </div>
+</div>
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
