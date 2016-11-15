@@ -4,7 +4,7 @@
     header("Location:index.php");
   }else{
     $user_id = $_SESSION['id'];
-    echo $user_id;
+
   }
 
  ?>
@@ -34,146 +34,23 @@
 
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">p42</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="profil.php">Profil</a></li>
-          <li><a href="friends.php">Freunde finden</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php">Logout</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav><!-- /Navigation -->
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8"> <!-- Hauptinhalt -->
-
-        <!-- Post hinzufügen -->
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">Was machst du gerade?</div>
-              <div class="panel-body">
-                <form enctype="multipart/form-data" method="post" action="home.php">
-                  <fieldset class="form-group">
-                    <textarea class="form-control" rows="3" name="posttext"></textarea>
-                  </fieldset>
-                  <div class="collapse" id="upload_container">
-                    <div class="well">
-                        <input type="file" name="post_img" id="post_img">
-                    </div>
-                  </div>
-                  <a class="btn btn-default" role="button" data-toggle="collapse" href="#upload_container" aria-expanded="false" aria-controls="collapseExample">
-                    Bild hinzufügen
-                  </a>
-                  <button type="submit" name="post-submit" class="btn btn-primary">posten</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /Post hinzufügen -->
-
-        <!-- Beitrag -->
-          <div class="row">
-            <div class="col-xs-2">
-              <div class="thumbnail p42thumbnail">
-                <img src="user_img/0_default_user_image.png" alt="profilbildBock" class="img-responsive">
-              </div><!-- /thumbnail p42thumbnail -->
-            </div><!-- /col-sm-2 -->
-
-            <form  class="form-inline" method="post" action="home.php">
-              <div class="col-xs-10">
-                <div class="panel panel-default p42panel">
-                  <div class="panel-heading">
-                    <button type="submit" class="close" name="post_delete" value="19">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h3 class="panel-title">Wolfgang Bock</h3>
-                  </div>
-                  <div class="panel-body">
-                    <p>Ein Test</p>
-                  </div>
-                  <div class="panel-footer text-right small">
-                    <small><a class="text-muted" href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a></small>
-                  </div>
-                </div>
-              </div><!-- /col-sm-10 -->
-            </form>
-          </div> <!-- /Beitrag -->
-
-        <!-- Beitrag -->
-          <div class="row">
-            <div class="col-xs-2">
-              <div class="thumbnail p42thumbnail">
-                <img src="user_img/0_default_user_image.png" alt="profilbildBock" class="img-responsive">
-              </div><!-- /thumbnail p42thumbnail -->
-            </div><!-- /col-sm-2 -->
-
-            <form  class="form-inline" method="post" action="home.php">
-              <div class="col-xs-10">
-                <div class="panel panel-default p42panel">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Urs Thöny</h3>
-                  </div>
-                  <div class="panel-body">
-                    <p>Ein Test mit Bild und ohne Löschen-Butten</p>
-                    <img src="post_img/beispiel.jpg" alt="postimage" class="img-responsive">
-                  </div>
-                  <div class="panel-footer text-right">
-                    <small><a class="text-muted" href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a></small>
-                  </div>
-                </div>
-              </div><!-- /col-sm-10 -->
-            </form>
-          </div> <!-- /Beitrag -->
-      </div> <!-- /Hauptinhalt -->
-
-      <!-- Seitenleiste -->
-      <div class="col-md-4">
-        <!-- Userliste -->
-        <div class="panel panel-default">
-          <div class="panel-heading">Meine Freunde</div>
-          <div class="panel-body">
-            <form method="post" action="home.php" >
-            <!-- User als Freund hinzufügen -->
-              <div class="form-group row p42-form-group">
-                <input type="checkbox" name="del_friends[]" id="userid9" autocomplete="off" value="9" />
-                <div class="btn-group col-xs-12">
-                  <label for="userid9" class="btn btn-default col-xs-2 col-sm-1 col-md-2">
-                    <span class="glyphicon glyphicon-minus"></span>
-                    <span> </span>
-                  </label>
-                  <label for="userid9" class="btn btn-default active col-xs-10 col-sm-11 col-md-10">
-                      Urs Thöny
-                  </label>
-                </div>
-              </div> <!-- /User als Freund hinzufügen -->
-              <input type="submit" class="btn btn-default" value="aus Freundesliste entfernen" />
-            </form>
-          </div>
-        </div> <!-- /Userliste -->
-      </div> <!-- /Seitenleiste -->
-    </div>
-  </div>
-
+  <div class="span3">
+    <h2>Publikation erfassen</h2>
+    <form>
+    <label>First Name</label>
+    <input type="text" name="firstname" class="span3"></br>
+    <label>Last Name</label>
+    <input type="text" name="lastname" class="span3"></br>
+    <label>Email Address</label>
+    <input type="email" name="email" class="span3"></br>
+    <label>Username</label>
+    <input type="text" name="username" class="span3"></br>
+    <label>Password</label>
+    <input type="password" name="password" class="span3"></br>
+    <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+    <div class="clearfix"></div>
+    </form>
+</div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
