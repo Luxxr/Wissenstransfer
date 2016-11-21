@@ -1,13 +1,17 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['id'])){
-    header("Location:index.php");
-  }else{
-    $user_id = $_SESSION['id'];
+$error = false;
+$error_msg="";
+$success = false;
+$success_msg = "";
 
-  }
+
+
+
 
  ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -52,19 +56,22 @@
 
 
       <fieldset>
-        <input placeholder="Vor- und Nachname" type="text" tabindex="1" required autofocus>
+        <input placeholder="Vorname" type="text" name="firstname" tabindex="1" required autofocus>
       </fieldset>
       <fieldset>
-        <input placeholder="Name / Titel Publikation" type="text" tabindex="2" required>
+        <input placeholder="Nachname" type="text" name="surname" tabindex="2" required autofocus>
       </fieldset>
       <fieldset>
-        <input placeholder="Publikations Ort" type="text" tabindex="3" required>
+        <input placeholder="Name / Titel Publikation" name="pubname"type="text" tabindex="3" required>
       </fieldset>
       <fieldset>
-        <input placeholder="Erscheinungsdatum (dd/mm/yyyy)" type="text" tabindex="4" required>
+        <input placeholder="Publikations Ort" type="text" name="pubplace" tabindex="4" required>
       </fieldset>
       <fieldset>
-        <input placeholder="Seitenzahl" type="text" tabindex="5 " required>
+        <input placeholder="Erscheinungsdatum (dd/mm/yyyy)" name="date" type="text" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Seitenzahl" type="text" name="number" tabindex="6" required>
       </fieldset>
 
       <fieldset>
