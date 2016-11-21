@@ -3,10 +3,20 @@
   if(isset($_SESSION['id'])) unset($_SESSION['id']);
   session_destroy(); */
 
+  /*require_once('system/security.php')*/
+
   $error = false;
   $error_msg = "";
   $success = false;
   $success_msg = "";
+
+  function get_db_connection()
+  {
+    $db = mysqli_connect('localhost', '861288_1_1', 'u7wqnSfU6Hy3', '861288_1_1')
+      or die('Fehler beim Verbinden mit dem Datenbankserver.');
+    mysqli_set_charset($db, "utf8");
+    return $db;
+  }
 
 
   /*if(isset($_POST['login-submit'])){
@@ -18,9 +28,7 @@
       $email = $_POST['email'];
       $password = $_POST['password'];
 
-      $db = mysqli_connect('localhost', '861288_1_1', 'u7wqnSfU6Hy3', '861288_1_1')
-        or die('Fehler beim Verbinden mit dem Datenbankserver.');
-      mysqli_set_charset($db, "utf8");
+      $db = get_db_connection();
       $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password';";
 
       $result = mysqli_query($db, $sql);

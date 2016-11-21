@@ -4,9 +4,12 @@
     header("Location:index.php");
   }else{
     $user_id = $_SESSION['id'];
-
   }
 
+  if(isset($_POST['submit'])){
+     if(!empty($_POST['name-test'])){
+    }
+  }
  ?>
 
 
@@ -35,7 +38,7 @@
 </head>
 <body>
   <div class="container">
-    <form id="contact" action="" method="post">
+    <form id="contact" action="" method="post" action=" <?php echo $_SERVER['PHP_SELF']; ?>">
       <h3>Publikation erfassen</h3>
       <h4>test test test</h4>
       <fieldset>
@@ -48,7 +51,7 @@
         </select>
       </fieldset>
       <fieldset>
-        <input placeholder="Voller Name" type="text" tabindex="1" required autofocus>
+        <input name="name-test" placeholder="Voller Name" type="text" tabindex="1" required autofocus>
       </fieldset>
       <fieldset>
         <input placeholder="Erscheinungsdatum" type="text" tabindex="2" required>
@@ -69,6 +72,4 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</body>
-</html>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
