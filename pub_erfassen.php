@@ -37,7 +37,7 @@
   <div class="container">
     <form id="contact" action="" method="post">
       <h3>Publikation erfassen</h3>
-      <h4>test test test</h4>
+
       <fieldset>
         <select>
           <option value="Referat">Referat</option>
@@ -47,25 +47,44 @@
           <option value="Blogbeitrag">Blogbeitrag</option>
         </select>
       </fieldset>
+
+
+
+
       <fieldset>
-        <input placeholder="Voller Name" type="text" tabindex="1" required autofocus>
+        <input placeholder="Vor- und Nachname" type="text" tabindex="1" required autofocus>
       </fieldset>
       <fieldset>
-        <input placeholder="Erscheinungsdatum" type="text" tabindex="2" required>
+        <input placeholder="Name / Titel Publikation" type="text" tabindex="2" required>
       </fieldset>
       <fieldset>
-        <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+        <input placeholder="Publikations Ort" type="text" tabindex="3" required>
       </fieldset>
       <fieldset>
-        <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+        <input placeholder="Erscheinungsdatum (dd/mm/yyyy)" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Seitenzahl" type="text" tabindex="5 " required>
       </fieldset>
 
       <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        <button onclick="myFunction()"name="submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern</button>
       </fieldset>
+
+      <p id="demo"></p>
+
+      <script>
+      function myFunction() {
+          var x;
+          if (confirm("Ihre Publikation wurde erfasst!") == true)
+          document.getElementById("demo").innerHTML = x;
+      }
+      </script>
+
 
     </form>
   </div>
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
