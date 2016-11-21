@@ -30,7 +30,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <link rel="stylesheet" href="css/home_dozent.css">
+  <link rel="stylesheet" href="css/pub_erfassen.css">
 
 </head>
 <body>
