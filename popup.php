@@ -10,7 +10,7 @@
 <script>
 function myFunction() {
     var x;
-    if (confirm("Ihre Publikation wurde erfasst!") == true) 
+    if (confirm("Ihre Publikation wurde erfasst!") == true)
     document.getElementById("demo").innerHTML = x;
 }
 </script>
