@@ -20,8 +20,11 @@ session_start();
       $date = filter_data($_POST['date']);
       $pubpage = filter_data($_POST['pubpage']);
       $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage);
+
     }
   }
+
+
 
 $error = false;
 $error_msg="";
@@ -103,19 +106,10 @@ if(isset($_POST['submit'])){
       </fieldset>
 
       <fieldset>
-        <button onclick="myFunction()"name="submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern</button>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern</button>
       </fieldset>
 
       <p id="demo"></p>
-
-      <script>
-      function myFunction() {
-          var x;
-          if (confirm("Ihre Publikation wurde erfasst!") == true)
-          document.getElementById("demo").innerHTML = x;
-      }
-      </script>
-
 
     </form>
   </div>
@@ -124,5 +118,19 @@ if(isset($_POST['submit'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <script>
+    $('#contact').on('submit', myFunction);
+
+    function myFunction() {
+        var x;
+        if (confirm("Ihre Publikation wurde erfasst!") == true) {
+          document.getElementById("demo").innerHTML = x;
+          window.location.href='pub_meine.php';
+        }
+        // Damit das Formular nicht abgesendet wird an den Server
+        return false;
+    }
+  </script>
 </body>
 </html>
