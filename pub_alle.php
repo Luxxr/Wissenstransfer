@@ -95,10 +95,6 @@ $post_list = get_posts($user_id);
             </div>
 
 
-
-
-
-
   </head>
   <body>
     <!-- Titel-->
