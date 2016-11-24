@@ -1,9 +1,37 @@
 <?php
+session_start();
+ if(!isset($_SESSION['id'])){
+   header("Location:index.php");
+ }else{
+   $user_id = $_SESSION['id'];
+ }
+
+ require_once('system/data.php');
+ require_once('system/security.php');
+
+ if(isset($_POST['submit'])){
+    if(!empty($_POST['firstname']) && !empty($_POST['surname'])
+    && !empty($_POST['pubname']) && !empty($_POST['pubplace']) && !empty($_POST['date'])
+    && !empty($_POST['pubpage']) ){
+      $firstname = filter_data($_POST['firstname']);
+      $surname = filter_data($_POST['surname']);
+      $pubname = filter_data($_POST['pubname']);
+      $pubplace = filter_data($_POST['pubplace']);
+      $date = filter_data($_POST['date']);
+      $pubpage = filter_data($_POST['pubpage']);
+      $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage);
+    }
+  }
+
 $error = false;
 $error_msg="";
 $success = false;
 $success_msg = "";
 
+if(isset($_POST['submit'])){
+     if(!empty($_POST['name-test'])){
+    }
+  }
 
 
 
@@ -39,7 +67,7 @@ $success_msg = "";
 </head>
 <body>
   <div class="container">
-    <form id="contact" action="" method="post">
+    <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <h3>Publikation erfassen</h3>
 
       <fieldset>

@@ -28,6 +28,15 @@ function login($email, $password)
 }
 
 
+/* ***************************** */
+/* pub_erfassen.php
+/* ***************************** */
+
+function write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage)
+{
+  $sql = "INSERT INTO posts (firstname, surname, pubname, pubplace, date, pubpage) VALUES ('$firstname', '$surname', '$pubname', '$pubplace', '$date', '$pubpage');";
+  return get_result($sql);
+}
 
 
 
