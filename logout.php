@@ -1,4 +1,7 @@
 
+      <!-- Hilfe / Ablage für Rosa/ Seite löschen für Endprodukt -->
+
+
           <form action="index.php" method="post" class="button">
               <input name="return" type="hidden" align="right" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
               <input type="submit" value="Logout" />
