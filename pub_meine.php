@@ -19,97 +19,93 @@ $post_list = get_posts($user_id);
 ?>
 
 
-
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Meine Publikationen</title>
-    <link rel="stylesheet" href="css/pub_meine.css">
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Publikationen</title>
+    <link rel="stylesheet" href="css/pub_erfassen.css">
 
-    <form action="index.php" method="post" class="button">
-        <input name="return" type="hidden" align="right" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
-        <input type="submit" value="Logout" />
-    </form>
 
   </head>
   <body>
+
+
+<?php while($post = mysqli_fetch_array($post_list)) { ?>
+
     <div class="container">
       <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <h1>Meine Publikationen</h1>
-    </div>
-<br>
+
+      <div>
+        <form  class="form-inline" method="post" action="home.php">
+          <div class="col-xs-10">
+            <div class="panel panel-default p42panel">
+              <div class="panel-heading">
+
+                </button>
 
 
+                <h3 class="panel-title"><?php echo $post ['firstname'];?> </h3>
+                <h3 class="panel-title"><?php echo $post ['lastname']; ?></h3>
+                <h3 class="panel-title"><?php echo $post ['pubname']; ?></h3>
+                <h3 class="panel-title"><?php echo $post ['pubplace']; ?></h3>
+                <h3 class="panel-title"><?php echo $post ['pubpage']; ?></h3>
+              </div>
+              <div class="panel-body">
+                <p><?php echo $post ['date']; ?></p>
+              </div>
 
-
-
-
-
-
-  <!-- Bootstrap -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <link rel="stylesheet" href="css/p42_style.css">
-
-</head>
-
-<body>
-
-  <?php while($post = mysqli_fetch_array($post_list)) { ?>
-
-
-<!-- Beitrag -->
-
-    <form  class="form-inline" method="post" action="home.php">
-      <div class="col-xs-10">
-        <div class="panel panel-default p42panel">
-          <div class="panel-heading">
-
-            </button>
-            <h3 class="panel-title"><?php echo $post ['firstname']; echo $post ['lastname'] ?></h3>
-          </div>
-          <div class="panel-body">
-            <p><?php echo $post ['pubname']; echo $post ['pubplace']; echo $post ['date']; echo $post ['pubpage'];?></p>
-          </div>
-
+            </div>
+          </div><!-- /col-sm-10 -->
+        </form>
+      </div>
         </div>
-      </div><!-- /col-sm-10 -->
-    </form>
-  </div> <!-- /Beitrag -->
 
-<?php } ?>
+        <?php } ?>
 
-<!-- Beitrag -->
 
-    <form  class="form-inline" method="post" action="home.php">
-      <div class="col-xs-10">
-        <div class="panel panel-default p42panel">
-          <div class="panel-heading">
 
-            </button>
-            <h3 class="panel-title">Test 1</h3>
+
+
+
+
+
+
+        <div class="container">
+          <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+          <div>
+            <form  class="form-inline" method="post" action="home.php">
+              <div class="col-xs-10">
+                <div class="panel panel-default p42panel">
+                  <div class="panel-heading">
+
+                    </button>
+                    <h3 class="panel-title">Vorname Nachname</h3>
+                    <h3 class="panel-title">Name Publikation</h3>
+                    <h3 class="panel-title">Publikationsort</h3>
+                    <h3 class="panel-title">Datum</h3>
+                    <h3 class="panel-title">Seitenzahl</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>test</p>
+                  </div>
+
+                </div>
+              </div><!-- /col-sm-10 -->
+            </form>
           </div>
-          <div class="panel-body">
-            <p>test</p>
-          </div>
-
-        </div>
-      </div><!-- /col-sm-10 -->
-    </form>
-  </div> <!-- /Beitrag -->
+            </div>
 
 
-</body>
+
+
+
+
+  </head>
+  <body>
+    <!-- Titel-->
+
+  </body>
+</html>
