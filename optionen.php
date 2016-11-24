@@ -17,8 +17,8 @@
 <div class="umrandung">
 <div class="buttons">
 <div class="content">
-  <a href="home_forschungsleiter.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-folder-open"></span> Publikationen</a>
-  <a href="home_dozent.php" class="btn btn-info btn-lg" ><span class="glyphicon glyphicon-edit"></span> Publikation erfassen</button>
+  <a href="pub_meine.php" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-folder-open"></span> Publikationen</a>
+  <a href="pub_erfassen.php" class="btn btn-info btn-lg" ><span class="glyphicon glyphicon-edit"></span> Publikation erfassen</button>
   <a href="#" class="btn btn-lg btn-danger" disabled="disabled"><span class="glyphicon glyphicon-lock"></span> Privat</a>
 </div>
 </div>

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.body {
+  background: #e9e9e9;
+  color: #666666;
+}
+
+.content {
+  margin-left: 90px;
+}
+
+.btn-lg {
+  margin-bottom: 50px;
+	margin-top: 80px;
+	margin-left: 40px;
+	height: 300px;
+  width: 300px;
+  text-align: center;
+}
+
+.uberschrift {
+  padding: 5  0px 0;
+  margin-top: 150px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.uberschrift h1 {
+  margin: 0 0 20px;
+  font-size: 40px;
+  font-weight: 300;
+}
+.uberschrift span {
+  font-size: 12px;
+}
+.uberschrift span .fa {
+  color: #ed2553;
+}
+.uberschrift span a {
+  color: #ed2553;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.umrandung {
+  position: relative;
+  background: #F5FFFE;
+  border-radius: 15px;
+  width: 1250px;
+  height: auto;
+  padding-top: 100px;
+  margin-left: 200px;
+  padding: 0px 0 0px 0;
+  box-sizing: border-box;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
