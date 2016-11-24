@@ -101,7 +101,7 @@
         <div class="bar"></div>
       </div>
       <div class="button-container">
-        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Take me to Narnia">
+        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Login">
       </div>
 
     </form>
