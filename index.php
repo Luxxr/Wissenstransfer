@@ -43,7 +43,7 @@
         $user = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION['id'] = $user['user_id'];
-        header("Location:home.php");
+        header("Location:optionen.php");
       }else {
         $error = true;
         $error_msg .= "Leider konnten wir BLA BLA.<br/>";
