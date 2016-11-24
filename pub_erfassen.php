@@ -75,6 +75,7 @@ echo "Step1";
 
     if(!$error){
       $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage, $user_id);
+      header("Location:pub_meine.php");
     }else{
       echo $error_msg;
     }
