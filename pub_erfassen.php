@@ -9,8 +9,59 @@ session_start();
  require_once('system/data.php');
  require_once('system/security.php');
 
- if(isset($_POST['submit'])){
-    if(!empty($_POST['firstname']) && !empty($_POST['surname'])
+ $error = false;
+ $error_msg="";
+ $success = false;
+ $success_msg = "";
+
+echo "Step1";
+ if(isset($_POST['write_submit'])){
+   echo "Step2";
+
+   If(empty($_POST['firstname'])){
+     $error = true;
+     $error_msg .= "kein Vorname<br>";
+   }else{
+     $firstname = filter_data($_POST['firstname']);
+   }
+
+   If(empty($_POST['surname'])){
+     $error = true;
+     $error_msg .= "kein Nachname<br>";
+   }else{
+     $surname = filter_data($_POST['surname']);
+   }
+
+   If(empty($_POST['pubname'])){
+     $error = true;
+     $error_msg .= "kein Publikationstitel<br>";
+   }else{
+     $pubname = filter_data($_POST['pubname']);
+   }
+
+   If(empty($_POST['pubplace'])){
+     $error = true;
+     $error_msg .= "kein Publikationsort<br>";
+   }else{
+     $pubplace = filter_data($_POST['pubplace']);
+   }
+
+   If(empty($_POST['date'])){
+     $error = true;
+     $error_msg .= "kein Datum<br>";
+   }else{
+     $date = filter_data($_POST['date']);
+   }
+
+   If(empty($_POST['pubpage'])){
+     $error = true;
+     $error_msg .= "keine Seitenzahl<br>";
+   }else{
+     $pubpage = filter_data($_POST['pubpage']);
+   }
+
+
+  /*  if(!empty($_POST['firstname']) && !empty($_POST['surname'])
     && !empty($_POST['pubname']) && !empty($_POST['pubplace']) && !empty($_POST['date'])
     && !empty($_POST['pubpage']) ){
       $firstname = filter_data($_POST['firstname']);
@@ -19,14 +70,16 @@ session_start();
       $pubplace = filter_data($_POST['pubplace']);
       $date = filter_data($_POST['date']);
       $pubpage = filter_data($_POST['pubpage']);
-      $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage);
+      $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage, $user_id);
+    } */
+
+    if(!$error){
+      $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage, $user_id);
+    }else{
+      echo $error_msg;
     }
   }
 
-$error = false;
-$error_msg="";
-$success = false;
-$success_msg = "";
 
 if(isset($_POST['submit'])){
      if(!empty($_POST['name-test'])){
@@ -99,11 +152,11 @@ if(isset($_POST['submit'])){
         <input placeholder="Erscheinungsdatum (dd/mm/yyyy)" name="date" type="text" tabindex="5" required>
       </fieldset>
       <fieldset>
-        <input placeholder="Seitenzahl" type="text" name="number" tabindex="6" required>
+        <input placeholder="Seitenzahl" type="text" name="pubpage" tabindex="6" required>
       </fieldset>
 
       <fieldset>
-        <button onclick="myFunction()"name="submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern</button>
+        <button name="write_submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern!</button>
       </fieldset>
 
       <p id="demo"></p>
@@ -113,6 +166,7 @@ if(isset($_POST['submit'])){
           var x;
           if (confirm("Ihre Publikation wurde erfasst!") == true)
           document.getElementById("demo").innerHTML = x;
+
       }
       </script>
 
