@@ -75,6 +75,7 @@ echo "Step1";
 
     if(!$error){
       $result = write_post($firstname, $surname, $pubname, $pubplace, $date, $pubpage, $user_id);
+      header("Location:pub_meine.php");
     }else{
       echo $error_msg;
     }
@@ -101,6 +102,12 @@ if(isset($_POST['submit'])){
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <form action="index.php" method="post" class="button">
+      <input name="return" type="hidden" align="right" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
+      <input type="submit" value="Logout" />
+  </form>
+
   <!-- The asbove 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Wissenstransfer - Home</title>
 

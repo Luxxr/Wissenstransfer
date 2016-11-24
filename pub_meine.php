@@ -28,7 +28,28 @@ $post_list = get_posts($user_id);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>p42 - Home</title>
+  <title>Meine Publikationen</title>
+    <link rel="stylesheet" href="css/pub_meine.css">
+
+    <form action="index.php" method="post" class="button">
+        <input name="return" type="hidden" align="right" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
+        <input type="submit" value="Logout" />
+    </form>
+
+  </head>
+  <body>
+    <div class="container">
+      <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <h3>Meine Publikationen</h3>
+    </div>
+<br>
+
+
+
+
+
+
+
 
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->

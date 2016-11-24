@@ -13,10 +13,6 @@
         <h3>Alle Publikationen</h3>
 
 
-
-
-
-
   </head>
   <body>
     <!-- Titel-->
