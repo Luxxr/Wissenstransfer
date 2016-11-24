@@ -25,7 +25,6 @@ session_start();
   }
 
 
-
 $error = false;
 $error_msg="";
 $success = false;
@@ -51,8 +50,16 @@ if(isset($_POST['submit'])){
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+          <form action="index.php" method="post" class="button">
+              <input name="return" type="hidden" align="right" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
+              <input type="submit" value="Logout" />
+          </form>
+
   <!-- The asbove 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Wissenstransfer - Home</title>
+
+<title>Wissenstransfer - Home</title>
 
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->
@@ -72,6 +79,8 @@ if(isset($_POST['submit'])){
   <div class="container">
     <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <h3>Publikation erfassen</h3>
+
+
 
       <fieldset>
         <select>
@@ -109,6 +118,7 @@ if(isset($_POST['submit'])){
         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Speichern</button>
       </fieldset>
 
+
       <p id="demo"></p>
 
     </form>
@@ -131,6 +141,7 @@ if(isset($_POST['submit'])){
         // Damit das Formular nicht abgesendet wird an den Server
         return false;
     }
+
   </script>
 </body>
 </html>
