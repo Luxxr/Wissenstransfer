@@ -40,7 +40,7 @@ $post_list = get_posts($user_id);
   <body>
     <div class="container">
       <form id="contact" action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <h3>Meine Publikationen</h3>
+        <h1>Meine Publikationen</h1>
     </div>
 <br>
 
